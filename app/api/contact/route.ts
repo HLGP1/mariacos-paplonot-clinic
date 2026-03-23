@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     const { name, email, phone, subject, message } = parsed.data;
 
     // ✅ SEND EMAIL
-    await resend.emails.send({
+   // await resend.emails.send({
       from: 'Mariacos Clinic <onboarding@resend.dev>', // ok for testing
       to: ['mcpclinicph@gmail.com'], // 🔥 CHANGE if needed
       subject: subject || 'New Inquiry',
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     });
 
     // ✅ OPTIONAL: AUTO-REPLY TO USER
-    await resend.emails.send({
+  //  await resend.emails.send({
       from: 'Mariacos Clinic <onboarding@resend.dev>',
       to: [email],
       subject: 'We received your inquiry',
